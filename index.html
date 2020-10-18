@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+</head>
+
+<body>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+
+        <a class="navbar-brand" href="#">Adrian Yonam</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="#">About</a>
+                <a class="nav-link" href="#">Portfolio</a>
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Contact</a>
+            </div>
+        </div>
+
+    </nav>
+
+
+
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container text-center">
+            <img src="img/yonam1.jpg" width="400" class="rounded-circle">
+            <h1 class="display-4">Basis Data II</h1>
+            <p>Transaksi adalah satu fitur DBMS relasional cukup penting bahkan menjadi keunggulan dari DBMS relasional secara umum Buatlah artikel dengan memberikan satu atau lebih contoh kasus suatu operasi yang harus dieksekusi dengan transaksi karena
+                membutuhkan requirement ACID di dalamnya. Contoh kasus dapat diambil dari operasional suatu entitas bisnis/organisasi misalnya Perpustakaan </p>
+            <p>Dalam artikel, jabarkan dengan jelas step-step dari transaksi tersebut dan alasan mengapa operasi tersebut harus dibuat dalam transaksi berdasarkan requirement ACID. Sertakan ilustrasi jika diperlukan Tugas ini merupakan tugas perorangan.
+                Tulisan kalian buat dalam sebuah halaman web personal yang dapat diakses publik. Alamat web dari tugas kalian silahkan copy dan paste sebagai reply dari thread ini.</p>
+        </div>
+    </div>
+
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col text-center">
+                <h1>Database Transaction
+                </h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <p> Database transaction adalah salah satu subset yang disediakan SQL. Gunanya untuk mengatur alur data transaksi dalam suatu database. Transaction ini biasanya digunakan didalam trigger. Namun, jangan samakan transaction ini dengan trigger.
+                    Trigger dijalankan untuk menanggapi perubahan tertentu pada tabel tertentu. </p>
+                <p>Mari saya contohkan ilustrasinya.</p>
+                <p>Toko-Queen mempunyai barang (10) dan ingin mengirim barang ke salah satu cabang Toko-War (5) dan War ini tidak memiliki barang tersebut.
+                </p>
+                <p><img src="img/yonam1.png" width="500"></p>
+            </div>
+            <div class="col">
+                <p>Lalu, kita bagi menjadi beberapa proses alur data:</p>
+                <p>1. Queen mengirim barang (source) ke cabang (destination) War</p>
+                <p>2. Data barang diterima oleh War</p>
+                <p>3. Jumlah yang berada di Queen berkurang menjadi 5</p>
+                <p>4. Jumlah barang bertambah di War menjadi 5</p>
+                <p><img src="img/yonam2.png" width="500"></p>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col text-center">
+                <h1>
+                </h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <p> Flow di atas adalah kasus yang dimana semua proses alur datanya berhasil selamat sampai tujuan akhir. Lalu, bagaimana jika di tengah-tengah proses terdapat kegagalan? Kegagalan ini bisa disebabkan banyak hal (internet mati, mati lampu,
+                    salah tipe data, dan lain-lain). </p>
+                <p>Flow di atas update stock source terdapat kegagalan, sedangkan update stock destination berhasil. Ini akan berakibat fatal sebab stok dari Queen tidak berkurang, sedangkan Stock War bertambah dengan sendirinya</p>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col text-center">
+                <h1>Konsep Database Transaction
+                </h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <p> Karena kasus sejenis itu, para ilmuwan dunia “Juru Ketik” membuat yang disebut proses Transaction. Dengan ini, jika ada kegagalan dalam 1 node (proses), seluruh transaksi (proses input) akan dibatalkan. Sementara itu, jika berhasil akan
+                    di-commit. </p>
+                <p>Transaction terdiri atas hal-hal berikut:</p>
+                <p>1. BEGIN</p>
+                <p>digunakan saat data akan diproses.</p>
+                <p>2.COMMIT </p>
+                <p>digunakan jika semua kasus pada alur proses berhasil. Bila demikian, fungsi commit harus diterapkan agar tersimpan di database.</p>
+                <p>3. ROLLBACK</p>
+                <p>digunakan jika terdapat kasus ada kegagalan (kesalahan/error) di salah satu proses itu. Maka, semua proses input akan dibatalkan (rollback) dan tidak akan disimpan ke dalam database.</p>
+
+            </div>
+            <div class="col">
+                <p><img src="img/yonam4.png" width="500"></p>
+                <p></p>
+                <p></p>
+                <p></p>
+                <p><img src="img/yonam5.png" width="500"></p>
+
+            </div>
+        </div>
+    </div>
